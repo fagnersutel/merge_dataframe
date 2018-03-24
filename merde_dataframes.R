@@ -3,7 +3,10 @@ a <- read.csv("dataframea.csv", header = T, sep = ";")
 b <- read.csv("dataframeb.csv", header = T, sep = ";")
 a
 b
-merge(a,b, by.x = "c1", by.y = "a")
+meus_dados <- merge(a,b, by.x = "c1", by.y = "a")
+meus_dados
+library(xlsx)
+write.xlsx(meus_dados, "mydata.xlsx")
 
 common <- intersect(a$c1, b$a)       
 common
